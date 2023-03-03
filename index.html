@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#div1, #div2, #div3 {
+  width: 150px;
+  height: 150px;
+  border: 1px solid #aaaaaa;
+  position: relative;
+  display: inline-block;
+  bottom: 0;
+  text-align: left;
+}
+#text {
+  font-family: Arial Black;
+  position: absolute;
+  display: inline-block;
+  background-color: white;
+}
+
+</style>
+<script>
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+</head>
+<body>
+
+<p>test 123</p>
+
+<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<div id="text">TRIPLE CROWN</div>
+</div>
+
+<div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">
+		<div id="text">DELETE</div>
+</div>
+
+<div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)">
+	<div id="text">C6</div>
+</div>
+
+<br>
+<img id="drag1" src="https://genshin-impact-team-randomizer.pages.dev/img/characters/amber.png" draggable="true" ondragstart="drag(event)" width="150" height="150">
+<img id="drag2" src="https://genshin-impact-team-randomizer.pages.dev/img/characters/shenhe.png" draggable="true" ondragstart="drag(event)" width="150" height="150">
+<img id="drag3" src="https://genshin-impact-team-randomizer.pages.dev/img/characters/albedo.png" draggable="true" ondragstart="drag(event)" width="150" height="150">
+
+</body>
+</html>
+
