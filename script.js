@@ -1,7 +1,4 @@
 const charsUsed = [];
-var oneFilled;
-var twoFilled;
-var threeFilled;
 
 function allowDrop(ev) {
     ev.preventDefault();
@@ -24,6 +21,14 @@ function allowDrop(ev) {
       var d2 = Math.floor(Math.random() * (charList.length - 1));
       var d3 = Math.floor(Math.random() * (charList.length - 1));
       var monkaW = 0;
+      while (charsUsed.includes(d1)) {
+        d1 = Math.floor(Math.random() * (charList.length - 1))
+        monkaW += 1;
+        if (monkaW > 1000) { //pretty sure the while loop should work fine but just in case OMEGALUL
+            break;
+        }
+      }
+      monkaW = 0;
       while (d1 == d2 || d2 == d3 || charsUsed.includes(d2)) {
         d2 = Math.floor(Math.random() * (charList.length - 1))
         monkaW += 1;
@@ -60,6 +65,14 @@ function allowDrop(ev) {
     var d2 = Math.floor(Math.random() * (charList.length - 1));
     var d3 = Math.floor(Math.random() * (charList.length - 1));
     var monkaW = 0;
+    while (charsUsed.includes(d1)) {
+        d1 = Math.floor(Math.random() * (charList.length - 1))
+        monkaW += 1;
+        if (monkaW > 1000) { //pretty sure the while loop should work fine but just in case OMEGALUL
+            break;
+        }
+    }
+
     while (d1 == d2 || d2 == d3 || charsUsed.includes(d2)) {
       d2 = Math.floor(Math.random() * (charList.length - 1))
       monkaW += 1;
