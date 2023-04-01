@@ -48,10 +48,24 @@ function allowDrop(ev) {
       charsUsed.push(d1);
       charsUsed.push(d2);
       charsUsed.push(d3);
-      
-      document.getElementById("drag1").src = charList[d1];
-      document.getElementById("drag2").src = charList[d2];
-      document.getElementById("drag3").src = charList[d3];
+      document.getElementById("imgHead").style.opacity = 1;
+      setTimeout(function(){
+        document.getElementById("imgHead").style.transform = "translateY(0px)";
+      }, 200);
+
+
+      setTimeout(function(){
+        document.getElementById("drag1").src = charList[d1];
+        document.getElementById("drag1").style.opacity = 1;
+        setTimeout(function(){
+          document.getElementById("drag2").src = charList[d2];
+          document.getElementById("drag2").style.opacity = 1;
+          setTimeout(function(){
+            document.getElementById("drag3").src = charList[d3];
+            document.getElementById("drag3").style.opacity = 1;
+          }, 400);
+        }, 400);
+      }, 400);
       
       // const drag = document.createElement("img");
       // drag.src = charList[d2];
@@ -100,11 +114,21 @@ function allowDrop(ev) {
     defineEle(ele1, d1);
     defineEle(ele2, d2);
     defineEle(ele3, d3);
-    
 
-    document.getElementById("chars").appendChild(ele1);
-    document.getElementById("chars").appendChild(ele2);
-    document.getElementById("chars").appendChild(ele3);
+    setTimeout(function () {
+      document.getElementById("chars").appendChild(ele1);
+      ele1.style.opacity = 1;
+      setTimeout(function () {
+        document.getElementById("chars").appendChild(ele2);
+        ele2.style.opacity = 1;
+        setTimeout(function () {
+          document.getElementById("chars").appendChild(ele3);
+          ele3.style.opacity = 1;
+
+        }, 400);
+      }, 400);
+    }, 700);
+
     if (charsUsed.length == 66){
       document.getElementById("btn").disabled = true;
     }
