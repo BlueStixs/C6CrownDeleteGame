@@ -25,7 +25,7 @@ function allowDrop(ev) {
       while (charsUsed.includes(d1)) {
         d1 = Math.floor(Math.random() * (charList.length - 1))
         monkaW += 1;
-        if (monkaW > 10000) { //pretty sure the while loop should work fine but just in case OMEGALUL
+        if (monkaW > 100000) { //pretty sure the while loop should work fine but just in case OMEGALUL
             break;
         }
       }
@@ -33,7 +33,7 @@ function allowDrop(ev) {
       while (d1 == d2 || d2 == d3 || charsUsed.includes(d2)) {
         d2 = Math.floor(Math.random() * (charList.length - 1))
         monkaW += 1;
-        if (monkaW > 10000) { //pretty sure the while loop should work fine but just in case OMEGALUL
+        if (monkaW > 100000) { //pretty sure the while loop should work fine but just in case OMEGALUL
             break;
         }
       }
@@ -41,7 +41,7 @@ function allowDrop(ev) {
       while (d1 == d3 || d2 == d3 || charsUsed.includes(d3)) {
         d3 = Math.floor(Math.random() * (charList.length - 1))
         monkaW += 1;
-        if (monkaW > 10000) { //pretty sure the while loop should work fine but just in case OMEGALUL
+        if (monkaW > 100000) { //pretty sure the while loop should work fine but just in case OMEGALUL
             break;
         }
       }
@@ -99,7 +99,7 @@ function allowDrop(ev) {
     while (d1 == d3 || d2 == d3 || charsUsed.includes(d3)) {
       d3 = Math.floor(Math.random() * (charList.length - 1))
       monkaW += 1;      
-      if (monkaW > 1000) { //pretty sure the while loop should work fine but just in case OMEGALUL
+      if (monkaW > 10000) { //pretty sure the while loop should work fine but just in case OMEGALUL
           break;
       }
     }
